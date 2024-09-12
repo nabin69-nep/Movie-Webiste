@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-   <div>
-    hello
-   </div>
+   <main  className="mt-32">
+    gghhhh
+   </main>
   );
 }
