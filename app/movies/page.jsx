@@ -45,7 +45,7 @@ export default function Trending() {
 <Carousel>
   <CarouselContent>
           {data.map((movie) => (
-    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+    <CarouselItem key={movie.id} className="md:basis-1/2 lg:basis-1/3">
        <div
               key={movie.id}
               className="bg-white rounded-lg shadow-md overflow-hidden"

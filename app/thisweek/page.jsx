@@ -30,10 +30,10 @@ export default function Trending() {
     <div className="container mx-auto px-4 mt-10 overflow-hidden">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-3 lg:grid-cols-4 gap-6">
       {isLoading && <Loading  cards={20}/>}
-      {data.map((movie) => {
+      {data.map((movie,index) => {
             
             return <div 
-               key={movie.id}
+               key={index}
                className="bg-white rounded-lg shadow-md overflow-hidden"
              >
                <img

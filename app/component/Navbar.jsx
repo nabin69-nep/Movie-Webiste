@@ -49,7 +49,7 @@ const Navbar = () => {
   <Link href="/tv" className=" text-lg hover:text-gray-500">
             Popular
           </Link>
-  <Link href="/movies/toprated" className=" text-lg hover:text-gray-500">
+  <Link href="/tv/toprated" className=" text-lg hover:text-gray-500">
   Top Rated
           </Link>
   </HoverCardContent>
@@ -109,16 +109,44 @@ const Navbar = () => {
           isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        
-        <Link href="/movies" className=" text-lg">
-          Movies
-        </Link>
-        <Link href="/tvshows" className="text-lg">
-          TV Shows
-        </Link>
-        <Link href="/tvshows" className=" text-lg">
-          People
-        </Link>
+        <div className="flex flex-col gap-2 justify-start items-start">
+        <DropdownMenu>
+  <DropdownMenuTrigger><span className="text-lg">Movies</span></DropdownMenuTrigger>
+  <DropdownMenuContent className="relative z-[9999]">
+   
+    <DropdownMenuItem><Link href="/movies" className=" text-lg hover:text-gray-500">
+            Popular
+          </Link>
+</DropdownMenuItem>
+    <DropdownMenuItem>  <Link href="/movies/nowplaying" className=" text-lg hover:text-gray-500">
+  Now Playing
+          </Link></DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+        <DropdownMenu>
+  <DropdownMenuTrigger><span className="text-lg">Tv Shows</span></DropdownMenuTrigger>
+  <DropdownMenuContent className="relative z-[9999]">
+   
+    <DropdownMenuItem><Link href="/tv" className=" text-lg hover:text-gray-500">
+            Popular
+          </Link>
+</DropdownMenuItem>
+    <DropdownMenuItem>  <Link href="/tv/toprated" className=" text-lg hover:text-gray-500">
+  Top Rated
+          </Link></DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+        <DropdownMenu>
+  <DropdownMenuTrigger><span className="text-lg">People</span></DropdownMenuTrigger>
+  <DropdownMenuContent className="relative z-[9999]">
+   
+    <DropdownMenuItem><Link href="/people" className=" text-lg hover:text-gray-500">
+            Popular People
+          </Link>
+</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+</div>
       </div>
     </nav>
   );
