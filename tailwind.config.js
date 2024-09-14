@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     darkMode: ["class"],
@@ -9,9 +11,14 @@ module.exports = {
   darkMode:'class',
   theme: {
   	extend: {
+		backgroundImage: {
+			'avatar-banner': "url('/Images/avatar-banner.webp')",
+			'input-gradient': 'linear-gradient(135deg, #6ee7b7, #3b82f6)'
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+			
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
