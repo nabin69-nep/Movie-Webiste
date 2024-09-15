@@ -34,10 +34,10 @@ const Navbar = () => {
           <HoverCard>
   <HoverCardTrigger><span className="text-lg cursor-pointer">Movies</span></HoverCardTrigger>
   <HoverCardContent className="flex flex-col">
-  <Link href="/movies" className=" text-lg hover:text-gray-500">
+  <Link href="/section/movies" className=" text-lg hover:text-gray-500">
             Popular
           </Link>
-  <Link href="/movies/nowplaying" className=" text-lg hover:text-gray-500">
+  <Link href="/section/movies/nowplaying" className=" text-lg hover:text-gray-500">
   Now Playing
           </Link>
   </HoverCardContent>
@@ -46,10 +46,10 @@ const Navbar = () => {
                <HoverCard>
   <HoverCardTrigger><span className="text-lg cursor-pointer">Tv Shows</span></HoverCardTrigger>
   <HoverCardContent className="flex flex-col">
-  <Link href="/tv" className=" text-lg hover:text-gray-500">
+  <Link href="/section/tv" className=" text-lg hover:text-gray-500">
             Popular
           </Link>
-  <Link href="/tv/toprated" className=" text-lg hover:text-gray-500">
+  <Link href="/section/tv/toprated" className=" text-lg hover:text-gray-500">
   Top Rated
           </Link>
   </HoverCardContent>
@@ -57,7 +57,7 @@ const Navbar = () => {
 <HoverCard>
   <HoverCardTrigger><span className="text-lg cursor-pointer">People</span></HoverCardTrigger>
   <HoverCardContent className="flex flex-col">
-  <Link href="/people" className=" text-lg hover:text-gray-500">
+  <Link href="/section/people" className=" text-lg hover:text-gray-500">
             Popular People
           </Link>
   </HoverCardContent>
@@ -114,11 +114,11 @@ const Navbar = () => {
   <DropdownMenuTrigger><span className="text-lg">Movies</span></DropdownMenuTrigger>
   <DropdownMenuContent className="relative z-[9999]">
    
-    <DropdownMenuItem><Link href="/movies" className=" text-lg hover:text-gray-500">
+    <DropdownMenuItem><Link href="/section/movies" className=" text-lg hover:text-gray-500">
             Popular
           </Link>
 </DropdownMenuItem>
-    <DropdownMenuItem>  <Link href="/movies/nowplaying" className=" text-lg hover:text-gray-500">
+    <DropdownMenuItem>  <Link href="/section/movies/nowplaying" className=" text-lg hover:text-gray-500">
   Now Playing
           </Link></DropdownMenuItem>
   </DropdownMenuContent>
@@ -127,11 +127,11 @@ const Navbar = () => {
   <DropdownMenuTrigger><span className="text-lg">Tv Shows</span></DropdownMenuTrigger>
   <DropdownMenuContent className="relative z-[9999]">
    
-    <DropdownMenuItem><Link href="/tv" className=" text-lg hover:text-gray-500">
+    <DropdownMenuItem><Link href="/section/tv" className=" text-lg hover:text-gray-500">
             Popular
           </Link>
 </DropdownMenuItem>
-    <DropdownMenuItem>  <Link href="/tv/toprated" className=" text-lg hover:text-gray-500">
+    <DropdownMenuItem>  <Link href="/section/tv/toprated" className=" text-lg hover:text-gray-500">
   Top Rated
           </Link></DropdownMenuItem>
   </DropdownMenuContent>
@@ -140,7 +140,7 @@ const Navbar = () => {
   <DropdownMenuTrigger><span className="text-lg">People</span></DropdownMenuTrigger>
   <DropdownMenuContent className="relative z-[9999]">
    
-    <DropdownMenuItem><Link href="/people" className=" text-lg hover:text-gray-500">
+    <DropdownMenuItem><Link href="/section/people" className=" text-lg hover:text-gray-500">
             Popular People
           </Link>
 </DropdownMenuItem>

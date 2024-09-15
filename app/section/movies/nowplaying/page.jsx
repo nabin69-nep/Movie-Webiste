@@ -1,15 +1,13 @@
 import React from 'react'
-import ThisWeek from '../component/ThisWeek'
+import NowPlaying from "../../../component/NowPlaying"
 export default function page() {
   return (
-    <>
-    <ThisWeek />
-    </>
+    <NowPlaying />
   )
 }
 export function generateMetadata({ data }) {
   return {
-    title:"Herne",
+    title:"Herne/nowPlaying",
     description:"Get all your movies and show on herne",
   };
 

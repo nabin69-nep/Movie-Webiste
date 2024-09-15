@@ -2,11 +2,14 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Loading from "./Loading";
+import { useContext } from "react";
+import IdContext from "../context/IdContext";
 
 export default function Trending() {
+  const { setMovieId, setTvId,setPeopleId } = useContext(IdContext);
   const [data, setData] = useState([]);
-  const [count, setCount] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const getResponse = async () => {
       try {
@@ -19,13 +22,25 @@ export default function Trending() {
         }
         const result = await res.json();
         setData(result.results);
-        setIsLoading(!isLoading);
+        setIsLoading(false);  
       } catch (error) {
         console.log(error);
       }
     };
     getResponse();
   }, []);
+
+  function handleClick(evt) {
+    if (evt.media_type === "tv") {
+      setTvId(evt.id);
+    } else if(evt.media_type === "movie") {
+      setMovieId(evt.id);
+    }
+    else{
+      setPeopleId(evt.id);
+    }
+  }
+
   return (
     <div className="container mx-auto px-4 mt-10 overflow-hidden ">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-3 lg:grid-cols-4 gap-6">
@@ -44,9 +59,10 @@ export default function Trending() {
               />
               <div className="p-4">
                 <Link
-                  href={`/${movie.media_type === "movie" ? "movies" : "tv"}/${
-                    movie.title
-                  }`}
+                  onClick={() => handleClick(movie)} 
+                  href={`/section/${
+                    movie.media_type === "movie" ? "movies" : "tv"
+                  }/${movie.title || movie.original_name}`}
                   className="text-lg hover:underline text-black font-semibold mb-2 truncate"
                 >
                   {movie.title || movie.original_name}
@@ -60,9 +76,10 @@ export default function Trending() {
                   </p>
 
                   <Link
-                    href={`/${movie.media_type === "movie" ? "movies" : "tv"}/${
-                      movie.title
-                    }`}
+                    onClick={() => handleClick(movie)}  
+                    href={`/section/${
+                      movie.media_type === "movie" ? "movies" : "tv"
+                    }/${movie.title || movie.original_name}`}
                     className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
                   >
                     View More
@@ -73,7 +90,6 @@ export default function Trending() {
           );
         })}
       </div>
-      <div></div>
     </div>
   );
 }

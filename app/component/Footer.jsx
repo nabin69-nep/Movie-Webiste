@@ -32,11 +32,11 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
             <ul className="space-y-2">
-              <li><Link href="#" className="hover:text-gray-400">Home</Link></li>
-              <li><Link href="#" className="hover:text-gray-400">Movies</Link></li>
-              <li><Link href="#" className="hover:text-gray-400">Reviews</Link></li>
-              <li><Link href="#" className="hover:text-gray-400">Contact</Link></li>
-              <li><Link href="#" className="hover:text-gray-400">About Us</Link></li>
+              <li><Link href="/section/movies" className="hover:text-gray-400">Movies</Link></li>
+              <li><Link href="/section/tv" className="hover:text-gray-400">Tv Shows</Link></li>
+              <li><Link href="/section/people" className="hover:text-gray-400">People</Link></li>
+              <li><Link href="/about" className="hover:text-gray-400">About Us</Link></li>
+              <li><Link href="/contact" className="hover:text-gray-400">Contact</Link></li>
             </ul>
           </div>
 
@@ -44,7 +44,7 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <h2 className="text-lg font-semibold mb-4">Contact Us</h2>
             <p className=" mb-2">Suncity, Pepsicola, Kathmandu</p>
-            <p className=" mb-2">Email: khadkanabin090@gmail.com</p>
+            <p className=" mb-2">Email: hernemovies@gmail.com</p>
             <p>Phone: +977 9847512547</p>
           </div>
         </div>

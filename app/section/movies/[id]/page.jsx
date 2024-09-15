@@ -1,13 +1,14 @@
 
-import Trending from "./component/Trending";
-export default function Home() {
+import Detail from "@/app/component/Details"
+export default function Page() {
+
   return (
-  <Trending />
-);
+   <Detail />
+  );
 }
 export function generateMetadata({ data }) {
   return {
-    title:"Herne",
+    title:"Herne/moviesdetails",
     description:"Get all your movies and show on herne",
   };
 
