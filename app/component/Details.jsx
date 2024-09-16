@@ -62,7 +62,7 @@ export default function MovieDetails() {
         <div
   className=" relative rounded-lg shadow-md p-6 grid md:grid-cols-3 gap-6 bg-cover bg-center"
   style={{
-    backgroundImage: `url(https://image.tmdb.org/t/p/w500${data.backdrop_path})`,
+    backgroundImage: `url(https://image.tmdb.org/t/p/original${data.backdrop_path})`,
   }}
 >
   <div className="absolute  top-0 w-full h-full left-0 bg-red-950 opacity-[0.7] "></div>

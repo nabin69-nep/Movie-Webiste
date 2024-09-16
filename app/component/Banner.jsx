@@ -1,10 +1,11 @@
 "use client"
-import React,{useContext} from 'react';
+import React,{useContext,useState,useEffect} from 'react';
 import { useRouter } from 'next/navigation';
 import IdContext from '../context/IdContext';
 const Banner = () => {
   const router = useRouter();
   const{setWord,word,getResponse}=useContext(IdContext);
+  const[data,setData]=useState("")
   function handleClick(event) {
     event.preventDefault(); 
     if(word.length>2){
@@ -15,9 +16,29 @@ const Banner = () => {
       alert("Please enter more than 2 characters")
     }
   }
-
+  const number=Math.floor(Math.random()*10)
+  useEffect(() => {
+    const getResponse = async () => {
+      try {
+        const res = await fetch(
+          "https://api.themoviedb.org/3/trending/all/day?api_key=233d579ffe391c65ea271864eb408536"
+        );
+        if (!res.ok) {
+          console.log(`The error is ${res.statusText}`);
+          return;
+        }
+        const result = await res.json();
+        setData(result.results[number]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getResponse();
+  }, []);
   return (
-    <div className="relative h-64 bg-avatar-banner bg-cover bg-center">
+    <div className="relative h-64 sm:h-72 lg:h-[320px]  bg-cover bg-center" style={{
+      backgroundImage: `url(https://image.tmdb.org/t/p/original${data.backdrop_path})`,
+    }}>
       <div className="absolute inset-0 bg-blue-400 opacity-50"></div>
       <div className="container px-2 mx-auto flex flex-col h-64 gap-4 justify-center">
         <h1 className="text-white relative z-10 text-5xl font-bold">Welcome.</h1>
