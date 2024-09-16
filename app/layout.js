@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import { IdProvider } from "./context/IdContext";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 // import { getStaticPaths, getStaticProps } from "next/dist/build/templates/pages";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
 
       </body>
       </IdProvider>
+      <SpeedInsights />
     </html>
   );
 }
