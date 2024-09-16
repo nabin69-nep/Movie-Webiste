@@ -34,7 +34,7 @@ const SearchResultsPage = () => {
         <ul className="mt-4 space-y-2">
           {
             section.map((item, index) => (
-              <Link href={item.go} 
+              <Link key={index} href={item.go} 
     onClick={()=>setActiveButton(index)} 
     className={`flex justify-between items-center p-2 rounded-lg cursor-pointer ${
       activeButton ==index? 'bg-gray-200 font-bold dark:text-red-800' : 'hover:bg-gray-100 dark:hover:bg-red-200'
