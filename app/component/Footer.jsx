@@ -43,7 +43,7 @@ export default function Footer() {
           {/* Contact Information */}
           <div className="flex flex-col items-center md:items-start">
             <h2 className="text-lg font-semibold mb-4">Contact Us</h2>
-            <p className=" mb-2">Suncity, Pepsicola, Kathmandu</p>
+            <p className=" mb-2">Address: Suncity, Pepsicola, Kathmandu</p>
             <p className=" mb-2">Email: hernemovies@gmail.com</p>
             <p>Phone: +977 9847512547</p>
           </div>
