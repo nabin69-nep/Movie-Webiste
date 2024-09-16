@@ -7,6 +7,18 @@ import { useRouter } from "next/navigation";
 import IdContext from "../context/IdContext";
 import DetailPageLoader from "./DetailPageLoader";
 import Link from "next/link";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+import Trailer from "./Trailer";
 export default function MovieDetails() {
   const { movieId, setMovieId } = useContext(IdContext);
   const [data, setData] = useState("");
@@ -56,7 +68,9 @@ export default function MovieDetails() {
     );
   }
   return (
+    
     <div className=" p-6">
+  
       <div className="container mx-auto">
         {/* Movie Details Container */}
         <div
@@ -113,14 +127,24 @@ export default function MovieDetails() {
               <p className="text-gray-200">{data.overview}</p>
             </div>
           </div>
-          <div
-            onClick={() => router.push(data.homepage)}
-            className="flex relative text-gray-300 z-10 gap-4 cursor-pointer hover:underline sm:text-2xl text-xl lg:text-3xl items-center "
-          >
-            <FaCirclePlay />
-            <p> Watch Tailer</p>
-          </div>
+{/* <Trailer/> */}
+    
         </div>
+      <AlertDialog >
+  <AlertDialogTrigger className="flex w-full items-center gap-2 text-xl hover:underline sm:text-3xl"><FaCirclePlay />
+  <p> Watch Tailer</p></AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>{data.title}</AlertDialogTitle>
+      <AlertDialogDescription>
+       <Trailer />
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Close</AlertDialogCancel>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
       </div>
     </div>
   );

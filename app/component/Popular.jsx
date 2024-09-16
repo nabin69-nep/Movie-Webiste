@@ -72,7 +72,7 @@ if(isLoading) {
                   <p className="text-yellow-500 font-bold">
                     ⭐ {movie.vote_average.toFixed(1)}
                   </p>
-                  <Link onClick={()=>setMovieId(movie.id)}
+                  <Link onClick={()=>{setMovieId(movie.id)}}
                     href={`/section/movies/${
                       movie.title || movie.original_name
                     }`}

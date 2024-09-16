@@ -16,8 +16,8 @@ const Banner = () => {
       alert("Please enter more than 2 characters")
     }
   }
-  const number=Math.floor(Math.random()*10)
   useEffect(() => {
+    // const number=Math.floor(Math.random()*10)
     const getResponse = async () => {
       try {
         const res = await fetch(
@@ -28,7 +28,7 @@ const Banner = () => {
           return;
         }
         const result = await res.json();
-        setData(result.results[number]);
+        setData(result.results[0]);
       } catch (error) {
         console.log(error);
       }
