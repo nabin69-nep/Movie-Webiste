@@ -6,7 +6,7 @@ const About = () => {
       <h1 className="text-4xl font-bold  mb-6">About Us</h1>
       <p className="text-lg text-gray-700 dark:text-gray-400 mb-4">
         Welcome to <span className="font-semibold">Herne</span> – your ultimate
-        destination for all things cinema! Whether you're a casual moviegoer or
+        destination for all things cinema! Whether you&apos;re a casual moviegoer or
         a dedicated cinephile, our platform is designed to provide you with the
         latest news, reviews, and insights about movies from around the world.
       </p>
@@ -54,18 +54,18 @@ const About = () => {
         We believe movies have the power to bring people together, and we invite
         you to be a part of our growing community. Share your reviews, follow
         your favorite stars, and engage in discussions with fellow movie lovers.
-        Whether you're looking for a classic film to watch or exploring the
+        Whether you&apos;re looking for a classic film to watch or exploring the
         latest blockbuster, Herne has something for everyone.
       </p>
 
       <h2 className="text-2xl font-bold  mb-4">Contact Us</h2>
       <p className="text-lg text-gray-700 dark:text-gray-400 mb-4">
-        Have any questions or suggestions? We'd love to hear from you! Reach out
+        Have any questions or suggestions? We&apos;d love to hear from you! Reach out
         to us through our{" "}
         <Link href="/contact" className="text-blue-500 hover:underline">
           Contact Page
         </Link>
-        , and we'll get back to you as soon as possible.
+        , and we&apos;ll get back to you as soon as possible.
       </p>
 
       <p className="text-lg text-gray-700 dark:text-gray-400">
