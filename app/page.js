@@ -1,14 +1,10 @@
-
-import Trending from "./component/Trending";
+import Tab from "./component/Tabs";
+import Banner from "./component/Banner";
 export default function Home() {
   return (
-  <Trending />
+    <section>
+  <Banner />
+  <Tab />
+  </section>
 );
-}
-export function generateMetadata({ data }) {
-  return {
-    title:"Herne",
-    description:"Get all your movies and show on herne",
-  };
-
 }

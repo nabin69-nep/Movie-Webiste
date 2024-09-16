@@ -39,7 +39,7 @@ export default function Trending() {
   }
 
   return (
-    <div className="container mx-auto px-4 mt-10 overflow-hidden ">
+    <div className=" overflow-hidden ">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-3 lg:grid-cols-4 gap-6">
         {isLoading && <Loading cards={20} />}
 

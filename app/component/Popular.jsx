@@ -11,7 +11,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-
 export default function Trending() {
   const {setMovieId,movieId}=useContext(IdContext)
   const [activeButton, setActiveButton] = useState(0);

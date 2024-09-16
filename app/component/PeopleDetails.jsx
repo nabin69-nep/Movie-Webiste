@@ -65,7 +65,7 @@ export default function MovieDetails() {
           <div className="movie-poster md:col-span-1">
             <img
               src={`https://image.tmdb.org/t/p/w500${data.profile_path}`}
-              alt={`${data.title} Poster`}
+              alt={`${data.name} `}
               className="rounded-lg w-full relative z-10"
             />
           </div>
@@ -84,14 +84,17 @@ export default function MovieDetails() {
               <strong>BirthDay:</strong>{" "}
               <span className="text-gray-600">{data.birthday}</span>{" "}
               <span className="text-black font-semibold">
-                ({currentYear - data.birthday.slice(0, 4)})Year
+                {
+                  data.birthday==null? "N/A":((currentYear - data.birthday.slice(0, 4)))+ "Year"
+                }
+                
               </span>
             </p>
             <p className="text-black mb-2">
               <strong>Gender:</strong>{" "}
               <span className="text-gray-600">
                 {" "}
-                {data.gender ? "Female" : "Male"}
+                {data.gender==1 ? "Female" : "Male"}
               </span>
             </p>
             <p className="text-black mb-2">
