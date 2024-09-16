@@ -28,7 +28,7 @@ const Banner = () => {
           return;
         }
         const result = await res.json();
-        setData(result.results[0]);
+        setData(result.results[Math.floor(Math.random()*10)]);
       } catch (error) {
         console.log(error);
       }
