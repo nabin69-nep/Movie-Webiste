@@ -5,3 +5,10 @@ export default function page() {
     <SearchResultTv />
   )
 }
+export function generateMetadata({ data }) {
+  return {
+    title:"Herne/searchtvshows",
+    description:"Get all your movies and show on herne",
+  };
+
+}

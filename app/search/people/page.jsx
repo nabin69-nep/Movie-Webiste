@@ -5,3 +5,10 @@ export default function page() {
     <SearchResultPeople />
   )
 }
+export function generateMetadata({ data }) {
+  return {
+    title:"Herne/searchpeople",
+    description:"Get all your movies and show on herne",
+  };
+
+}
