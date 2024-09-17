@@ -17,8 +17,10 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
+} from "@/components/ui/alert-dialog";
 import Trailer from "./Trailer";
+import { CiGlobe } from "react-icons/ci";
+
 export default function MovieDetails() {
   const { movieId, setMovieId } = useContext(IdContext);
   const [data, setData] = useState("");
@@ -68,18 +70,16 @@ export default function MovieDetails() {
     );
   }
   return (
-    
-    <div className=" p-6">
-  
+    <div className="  p-2 sm:p-6">
       <div className="container mx-auto">
         {/* Movie Details Container */}
         <div
-  className=" relative rounded-lg shadow-md p-6 grid md:grid-cols-3 gap-6 bg-cover bg-center"
-  style={{
-    backgroundImage: `url(https://image.tmdb.org/t/p/original${data.backdrop_path})`,
-  }}
->
-  <div className="absolute  top-0 w-full h-full left-0 bg-red-950 opacity-[0.7] "></div>
+          className=" relative rounded-lg shadow-md  p-2 sm:p-6 grid md:grid-cols-3 gap-6 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(https://image.tmdb.org/t/p/original${data.backdrop_path})`,
+          }}
+        >
+          <div className="absolute  top-0 w-full h-full left-0 bg-red-950 opacity-[0.7] "></div>
           {/* Movie Poster */}
           <div className="movie-poster md:col-span-1">
             <img
@@ -91,9 +91,7 @@ export default function MovieDetails() {
 
           {/* Movie Info */}
           <div className="movie-info text-white  relative z-10 md:col-span-2">
-            <h1 className="sm:text-4xl text-xl font-bold mb-4">
-              {data.title}
-            </h1>
+            <h1 className="sm:text-4xl text-xl font-bold mb-4">{data.title}</h1>
             <p className="text-gray-200 mb-2">
               <strong>Release Date:</strong> {data.release_date}
             </p>
@@ -121,30 +119,38 @@ export default function MovieDetails() {
 
             {/* Movie Description */}
             <div className="mt-6">
-              <h2 className="text-3xl font-bold text-white  mb-2">
-                Synopsis
-              </h2>
+              <h2 className="text-3xl font-bold text-white  mb-2">Synopsis</h2>
               <p className="text-gray-200">{data.overview}</p>
             </div>
           </div>
-{/* <Trailer/> */}
-    
+          {/* <Trailer/> */}
         </div>
-      <AlertDialog >
-  <AlertDialogTrigger className="flex w-full items-center gap-2 text-xl hover:underline sm:text-3xl"><FaCirclePlay />
-  <p> Watch Tailer</p></AlertDialogTrigger>
-  <AlertDialogContent>
-    <AlertDialogHeader>
-      <AlertDialogTitle>{data.title}</AlertDialogTitle>
-      <AlertDialogDescription>
-       <Trailer />
-      </AlertDialogDescription>
-    </AlertDialogHeader>
-    <AlertDialogFooter>
-      <AlertDialogCancel>Close</AlertDialogCancel>
-    </AlertDialogFooter>
-  </AlertDialogContent>
-</AlertDialog>
+        <div className="flex gap-5 mt-5 items-center">
+          <AlertDialog>
+            <AlertDialogTrigger className="flex  items-center gap-2 text-xl hover:underline sm:text-3xl">
+              <FaCirclePlay />
+              <p> Watch Tailer</p>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>{data.title}</AlertDialogTitle>
+                <AlertDialogDescription>
+                  <Trailer />
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Close</AlertDialogCancel>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+          <Link
+            href={data.homepage}
+            className="flex  items-center gap-2 text-xl hover:underline sm:text-3xl"
+          >
+            <CiGlobe />
+            <span>Visit Site</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

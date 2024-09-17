@@ -19,6 +19,8 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 import TvTrailer from "./TvTrailer"
+import { CiGlobe } from "react-icons/ci";
+
 export default function MovieDetails() {
   const { tvId } = useContext(IdContext);
   const [data, setData] = useState(null);
@@ -72,11 +74,11 @@ export default function MovieDetails() {
   }
 
   return (
-    <div className="p-6">
+    <div className=" p-2 sm:p-6">
       <div className="container mx-auto">
         {/* Movie Details Container */}
         <div
-          className="relative rounded-lg shadow-md p-6 grid md:grid-cols-3 gap-6 bg-cover bg-center"
+          className="relative rounded-lg shadow-md p-2 sm:p-6 grid md:grid-cols-3 gap-6 bg-cover bg-center"
           style={{
             backgroundImage: `url(https://image.tmdb.org/t/p/w500${data.backdrop_path})`,
           }}
@@ -127,21 +129,32 @@ export default function MovieDetails() {
             </div>
           </div>
         </div>
-          <AlertDialog >
-  <AlertDialogTrigger className="flex w-full items-center gap-2 text-xl hover:underline sm:text-3xl"><FaCirclePlay />
-  <p> Watch Tailer</p></AlertDialogTrigger>
-  <AlertDialogContent>
-    <AlertDialogHeader>
-      <AlertDialogTitle>{data.title}</AlertDialogTitle>
-      <AlertDialogDescription>
-       <TvTrailer />
-      </AlertDialogDescription>
-    </AlertDialogHeader>
-    <AlertDialogFooter>
-      <AlertDialogCancel>Close</AlertDialogCancel>
-    </AlertDialogFooter>
-  </AlertDialogContent>
-</AlertDialog>
+        <div className="flex gap-5 items-center mt-5">
+          <AlertDialog>
+            <AlertDialogTrigger className="flex  items-center gap-2 text-xl hover:underline sm:text-3xl">
+              <FaCirclePlay />
+              <p> Watch Tailer</p>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>{data.title}</AlertDialogTitle>
+                <AlertDialogDescription>
+                  <TvTrailer />
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Close</AlertDialogCancel>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+          <Link
+            href={data.homepage}
+            className="flex  items-center gap-2 text-xl hover:underline sm:text-3xl"
+          >
+            <CiGlobe />
+            <span>Visit Site</span>
+          </Link>
+        </div>
       </div>
     </div>
   );
