@@ -28,7 +28,7 @@ const SearchBar = () => {
         value={word}
         onChange={(e)=>setWord(e.target.value)}
         placeholder="Search Here..."
-        className="ml-4 w-[95%] px-2  dark:bg-black focus:outline-none   italic"
+        className="ml-4 w-[95%] px-2 py-2  dark:bg-black focus:outline-none   italic"
       />
       </form>
     </div>

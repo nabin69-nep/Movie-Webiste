@@ -25,13 +25,13 @@ const SearchResultsPage = () => {
   return (
     <>
       {/* Sidebar */}
-      <aside className="  w-full lg:mt-[110px] mt-10 rounded-lg shadow-md p-4 mb-4 lg:mb-0">
+      <aside className=" w-full lg:w-80 mt-12  lg:mt-52 rounded-lg  p-4 mb-4 lg:mb-0">
         {/* Header */}
         <h1 className="text-lg font-semibold text-white bg-blue-500 p-3 rounded-lg">
           Search Results
         </h1>
         {/* Categories */}
-        <ul className="mt-4 space-y-2">
+        <ul className="mt-4 space-y-2 shadow-lg pb-10">
           {
             section.map((item, index) => (
               <Link key={index} href={item.go} 
