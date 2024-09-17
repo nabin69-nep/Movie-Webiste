@@ -1,6 +1,6 @@
 import SearchLayout from "../component/SearchLayout"
 import SearchBar from "../component/SearchBar";
-// import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export default function RootLayout({ children }) {
   return (
     <>
@@ -12,8 +12,8 @@ export default function RootLayout({ children }) {
       <main className="w-full lg:w-3/4 mt-5 p-6">
         {children}
       </main>
+    <SpeedInsights />
     </div>
-    {/* <SpeedInsights /> */}
     </>
 
   );
