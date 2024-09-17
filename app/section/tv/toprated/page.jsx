@@ -4,9 +4,10 @@ export default function page() {
   return (
     <TopRatedShow />
   )
-}export function generateMetadata({ data }) {
+}
+export function generateMetadata({ data }) {
   return {
-    title:"Herne/topRated",
+    title:"Herne | topRated",
     description:"Get all your movies and show on herne",
   };
 

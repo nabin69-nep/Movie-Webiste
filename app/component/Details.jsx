@@ -129,7 +129,7 @@ export default function MovieDetails() {
           <AlertDialog>
             <AlertDialogTrigger className="flex  items-center gap-2 text-xl hover:underline sm:text-3xl">
               <FaCirclePlay />
-              <p> Watch Tailer</p>
+              <span> Watch Tailer</span>
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>

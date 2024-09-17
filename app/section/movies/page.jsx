@@ -6,7 +6,7 @@ export default function page() {
 }
 export function generateMetadata({ data }) {
   return {
-    title:"Herne/movies",
+    title:"Herne | movies",
     description:"Get all your movies ",
   };
 

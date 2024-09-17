@@ -7,7 +7,7 @@ export default function page() {
 }
 export function generateMetadata({ data }) {
     return {
-      title:"Herne",
+      title:"Herne | Contact",
       description:"Get all your movies and show on herne",
     };
   

@@ -34,7 +34,6 @@ const SearchResultItem = () => {
       </Link>
         })
       }
-      {/* Content */}
     </div>
   );
 };

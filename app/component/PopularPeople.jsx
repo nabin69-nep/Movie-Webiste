@@ -56,7 +56,6 @@ export default function Trending() {
         <p className="text-lg hover:underline text-black font-semibold mb-2 truncate">
           {people.name || people.original_name}
         </p>
-        {/* Loop over known_for array */}
         {people.known_for?.length > 0 && (
           <div>
             {people.known_for.map((e, index) => (

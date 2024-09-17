@@ -23,7 +23,7 @@ const SearchResultsPage = () => {
     }
 ]
   return (
-    <div>
+    <>
       {/* Sidebar */}
       <aside className="  w-full lg:mt-[110px] mt-10 rounded-lg shadow-md p-4 mb-4 lg:mb-0">
         {/* Header */}
@@ -49,10 +49,8 @@ const SearchResultsPage = () => {
           }
         </ul>
       </aside>
-
-      {/* Results List */}
-     
-    </div>
+      </>
+   
   );
 };
 

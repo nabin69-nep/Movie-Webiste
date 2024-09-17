@@ -81,7 +81,7 @@ const Navbar = () => {
               stroke="currentColor"
             >
               {isOpen ? (
-                // Close (X) Icon
+                
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -89,7 +89,7 @@ const Navbar = () => {
                   d="M6 18L18 6M6 6l12 12"
                 />
               ) : (
-                // Hamburger Icon
+      
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -102,8 +102,6 @@ const Navbar = () => {
           <Theme />
         </div>
       </div>
-
-      {/* Links for mobile view with animation */}
       <div
         className={`md:hidden flex flex-col mt-4 space-y-4 transition-all duration-500 ease-in-out transform ${
           isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0 overflow-hidden"

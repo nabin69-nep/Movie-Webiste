@@ -6,11 +6,13 @@ import { useContext } from "react";
 import IdContext from "../context/IdContext";
 
 export default function Trending() {
-  const { setMovieId, setTvId,setPeopleId } = useContext(IdContext);
+  const { setMovieId, setTvId, setPeopleId } = useContext(IdContext);
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasMounted, setHasMounted] = useState(false); // Track mount status
 
   useEffect(() => {
+    setHasMounted(true); // Set to true once the component has mounted
     const getResponse = async () => {
       try {
         const res = await fetch(
@@ -33,19 +35,22 @@ export default function Trending() {
   function handleClick(evt) {
     if (evt.media_type === "tv") {
       setTvId(evt.id);
-    } else if(evt.media_type === "movie") {
+    } else if (evt.media_type === "movie") {
       setMovieId(evt.id);
-    }
-    else{
+    } else {
       setPeopleId(evt.id);
     }
   }
 
+  // Return loading or nothing until the component is mounted
+  if (!hasMounted) {
+    return null;
+  }
+
   return (
-    <div className=" overflow-hidden ">
+    <div className="overflow-hidden">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-3 lg:grid-cols-4 gap-6">
         {isLoading && <Loading cards={20} />}
-
         {data.map((movie) => {
           return (
             <div
@@ -59,7 +64,7 @@ export default function Trending() {
               />
               <div className="p-4">
                 <Link
-                  onClick={() => handleClick(movie)} 
+                  onClick={() => handleClick(movie)}
                   href={`/section/${
                     movie.media_type === "movie" ? "movies" : "tv"
                   }/${movie.title || movie.original_name}`}
@@ -72,11 +77,10 @@ export default function Trending() {
                 </p>
                 <div className="flex items-center justify-between">
                   <p className="text-yellow-500 font-bold">
-                    ⭐ {movie.vote_average.toFixed(1)}
+                    ⭐ {movie.vote_average}
                   </p>
-
                   <Link
-                    onClick={() => handleClick(movie)}  
+                    onClick={() => handleClick(movie)}
                     href={`/section/${
                       movie.media_type === "movie" ? "movies" : "tv"
                     }/${movie.title || movie.original_name}`}
