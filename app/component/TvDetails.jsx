@@ -18,7 +18,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-import Trailer from "./Trailer";
+import TvTrailer from "./TvTrailer"
 export default function MovieDetails() {
   const { tvId } = useContext(IdContext);
   const [data, setData] = useState(null);
@@ -134,7 +134,7 @@ export default function MovieDetails() {
     <AlertDialogHeader>
       <AlertDialogTitle>{data.title}</AlertDialogTitle>
       <AlertDialogDescription>
-       <Trailer />
+       <TvTrailer />
       </AlertDialogDescription>
     </AlertDialogHeader>
     <AlertDialogFooter>

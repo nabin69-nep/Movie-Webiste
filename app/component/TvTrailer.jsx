@@ -3,15 +3,14 @@ import React, { useState, useEffect, useContext } from "react";
 import IdContext from "../context/IdContext";
 
 export default function Trailer() {
-  const { movieId } = useContext(IdContext); 
+  const { tvId } = useContext(IdContext); 
   const [trailer, setTrailer] = useState(null); 
-
   useEffect(() => {
     const getTrailer = async () => {
-      if (!movieId) return; 
+      if (!tvId) return; 
       try {
             const res = await fetch(
-              `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=233d579ffe391c65ea271864eb408536&language=en-US`
+               `https://api.themoviedb.org/3/tv/${tvId}/videos?api_key=233d579ffe391c65ea271864eb408536`
             );
         if (!res.ok) {
           console.log(`The error is ${res.statusText}`);
@@ -23,14 +22,14 @@ export default function Trailer() {
         );
         if (youtubeTrailer) {
           setTrailer(youtubeTrailer);
-        }
+        } 
       } catch (error) {
         console.log("Error fetching the trailer:", error);
       }
     };
 
     getTrailer();
-  }, [movieId]); 
+  }, [tvId]); 
   return (
     trailer ? (
       <iframe
@@ -43,7 +42,7 @@ export default function Trailer() {
         allowFullScreen
       ></iframe>
     ) : (
-      <p>No trailer available</p> 
+      <p>No trailer available</p>
     )
   );
 }
